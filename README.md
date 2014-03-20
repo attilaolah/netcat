@@ -16,8 +16,11 @@ It also adds a [PNG bomb](#png-bombs) feature.
 ### Slowness
 
 To make it slow, set the `t` parameter to the desired timeout in seconds, e.g.
-`https://slowserver.herokuapp.com/?t=28` will take 28 seconds to return a
-response.
+the following will take 28 seconds to return a response:
+
+* [`https://netcat.herokuapp.com/?t=28`][4]
+
+[4]: https://netcat.herokuapp.com/?t=28
 
 **NOTE:** the default Heroku timeout of 30 seconds still applies. If you
 specify a timeout longer than that, you'll also get a 503 response from Heroku,
@@ -27,12 +30,15 @@ The `t` parameter applies to all paths.
 
 ### Status code
 
-By default, it returns empty **200 OK** responses for all paths except `/loop`,
-which defaults to **302 Found**.
+By default, it returns empty *200 OK* responses for all paths except `/loop`,
+which defaults to *302 Found*.
 
 To make it return a custom status code, set the `c` parameter to the desired
-status code, e.g. `https://slowserver.herokuapp.com/?t=28&c=418` will return a
-`418 I'm a teapot` response.
+status code, e.g. the following will return a *418 I'm a teapot* response.
+
+* [`https://netcat.herokuapp.com/?c=418`][5]
+
+[5]: https://netcat.herokuapp.com/?c=418
 
 The `c` parameter applies to all paths.
 
@@ -41,9 +47,9 @@ The `c` parameter applies to all paths.
 All query parameters except the first `c`, `b` and `t` params will be set as
 response headers. The following sets a cookie in the response:
 
-* [`https://slowserver.herokuapp.com/t=2&set-cookie=foo=bar`][2]
+* [`https://netcat.herokuapp.com/t=2&set-cookie=foo=bar`][2]
 
-[2]: https://slowserver.herokuapp.com/t=2&set-cookie=foo=bar
+[2]: https://netcat.herokuapp.com/t=2&set-cookie=foo=bar
 
 ### Custom body
 
@@ -58,9 +64,9 @@ The path `/loop` causes an infinite redirect loop. The status code defaults to
 302, but it can be overridden with the `c` parameter, just like for any other
 URL. The following is a very slow redirect loop:
 
-* [`https://slowserver.herokuapp.com/loop?t=28`][3]
+* [`https://netcat.herokuapp.com/loop?t=28`][3]
 
-[3]: https://slowserver.herokuapp.com/loop?t=28
+[3]: https://netcat.herokuapp.com/loop?t=28
 
 ### PNG bombs
 

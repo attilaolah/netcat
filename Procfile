@@ -1,1 +1,1 @@
-web: slowserver
+web: netcat

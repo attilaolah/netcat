@@ -1,5 +1,5 @@
 {
-	"ImportPath": "slowserver",
+	"ImportPath": "netcat",
 	"GoVersion": "go1.2",
 	"Deps": []
 }
