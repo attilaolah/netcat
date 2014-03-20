@@ -1,1 +1,1 @@
-web: netcat
+web: app

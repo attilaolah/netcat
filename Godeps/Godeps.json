@@ -1,5 +1,5 @@
 {
-	"ImportPath": "netcat",
+	"ImportPath": "web",
 	"GoVersion": "go1.2",
 	"Deps": []
 }
