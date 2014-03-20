@@ -1,4 +1,4 @@
-# SlowServer is a slow server. Nothing more. ![Public Domain](https://pypip.in/license/intperm/badge.png)
+# SlowServer: a very slow server ![Public Domain](https://pypip.in/license/intperm/badge.png)
 
 It is hosted on Heroku as `https://slowserver.herokuapp.com`.
 
