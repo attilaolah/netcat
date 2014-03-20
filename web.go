@@ -1,8 +1,10 @@
 package main
 
 import (
+	"io/ioutil"
 	"net/http"
 	"os"
+	"regexp"
 	"strconv"
 	"time"
 )
@@ -10,6 +12,12 @@ import (
 const (
 	pCode    = "c"
 	pTimeout = "t"
+	pngFile  = "hacks/16384x16384.white.png"
+)
+
+var (
+	rxPNG    = regexp.MustCompile("^/bomb(/.+)?\\.png$")
+	pngCache []byte
 )
 
 func main() {
@@ -47,4 +55,17 @@ func sloooww(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/loop" {
 		w.WriteHeader(http.StatusFound)
 	}
+	if rxPNG.FindString(r.URL.Path) != "" {
+		w.Write(pngBomb())
+	}
+}
+
+func pngBomb() []byte {
+	if len(pngCache) == 0 {
+		var err error
+		if pngCache, err = ioutil.ReadFile(pngFile); err != nil {
+			panic(err)
+		}
+	}
+	return pngCache
 }
