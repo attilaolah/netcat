@@ -44,7 +44,6 @@ slow redirect loop:
 
 ## TODO
 
-* custom headers
 * custom payload
 * redirect loop countown, e.g. `/loop/2` → `loop/1` → `/`
 * TCP version that uses sockets and blocks on the protocol level
