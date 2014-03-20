@@ -11,6 +11,7 @@ import (
 
 const (
 	pCode    = "c"
+	pBody    = "b"
 	pTimeout = "t"
 	pngFile  = "hacks/16384x16384.white.png"
 )
@@ -42,7 +43,7 @@ func sloooww(w http.ResponseWriter, r *http.Request) {
 	}
 	for key, vals := range q {
 		for i, val := range vals {
-			if i == 0 && (key == pCode || key == pTimeout) {
+			if i == 0 && (key == pCode || key == pBody || key == pTimeout) {
 				continue
 			}
 			w.Header().Add(key, val)
@@ -54,6 +55,10 @@ func sloooww(w http.ResponseWriter, r *http.Request) {
 	}
 	if r.URL.Path == "/loop" {
 		w.WriteHeader(http.StatusFound)
+	}
+	if b, ok := q[pBody]; ok {
+		w.Write([]byte(b[0]))
+		return
 	}
 	if rxPNG.FindString(r.URL.Path) != "" {
 		w.Write(pngBomb())
