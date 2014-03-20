@@ -8,7 +8,7 @@ address:
 It is *very* similar to [`httpbin`][1], except it only implements a few of the
 features, but combines them and exposes them on all URLs. 
 
-It also adds a [PNG bomb](#png-bombs) feature.
+It also comes with a built-in [PNG bomb](#png-bombs).
 
 [1]: http://httpbin.org
 
