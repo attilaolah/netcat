@@ -3,7 +3,7 @@
 NetCat is an HTTP server written in Go, hosted on Heroku, under the following
 address:
 
-* `https://netcat.herokuapp.com`
+* https://netcat.herokuapp.com
 
 It is *very* similar to [`httpbin`][1], except it only implements a few of the
 features, but combines them and exposes them on all URLs. 
