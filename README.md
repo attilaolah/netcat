@@ -76,3 +76,7 @@ special, 16384×16384 PNG image. It is all white and it is compressed to fit in
 
 This path will have a `Content-Type` header set to `image/png` by default, but
 you can override it with the `content-type` param, just like any other header.
+
+Open this link in your browser for an example :)
+
+* [https://netcat.herokuapp.com/bomb.png]
