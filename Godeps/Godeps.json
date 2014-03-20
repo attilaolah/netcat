@@ -1,0 +1,5 @@
+{
+	"ImportPath": "slowserver",
+	"GoVersion": "go1.2",
+	"Deps": []
+}
