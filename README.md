@@ -2,7 +2,7 @@
 
 It is hosted on Heroku as `https://slowserver.herokuapp.com`.
 
-## Slowing it down
+## Slowness
 
 To make it slow, set the `t` parameter to the desired timeout in seconds, e.g.
 `https://slowserver.herokuapp.com/?t=28` will take 28 seconds to return a
@@ -22,6 +22,15 @@ To make it return a custom status code, set the `c` parameter to the desired
 status code, e.g. `https://slowserver.herokuapp.com/?t=28&c=418` will return a
 `418 I'm a teapot` response.
 
+## Custom headers
+
+All query parameters except the first `c` and `t` params will be set as
+response headers. The following sets a cookie in the response:
+
+* [`https://slowserver.herokuapp.com/t=2&set-cookie=foo=bar`][2]
+
+[2]: https://slowserver.herokuapp.com/t=2&set-cookie=foo=bar
+
 ## Redirect loops
 
 The path `/loop` causes an infinite redirect loop. The status code defaults to
@@ -29,9 +38,9 @@ The path `/loop` causes an infinite redirect loop. The status code defaults to
 URL. All other parameters (`c` and `t`) are also valid. The following is a very
 slow redirect loop:
 
-* [`https://slowserver.herokuapp.com/loop?c=28`][1]
+* [`https://slowserver.herokuapp.com/loop?t=28`][1]
 
-[1]: https://slowserver.herokuapp.com/loop?c=28
+[1]: https://slowserver.herokuapp.com/loop?t=28
 
 ## TODO
 
