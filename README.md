@@ -1,4 +1,4 @@
-## NetCat: Hackable Heroku server ![Public Domain](https://pypip.in/license/intperm/badge.png)
+## NetCat: Hackable Heroku server
 
 NetCat is an HTTP server written in Go, hosted on Heroku, under the following
 address:
